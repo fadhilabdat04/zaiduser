@@ -226,7 +226,7 @@ async def upstream(client: Client, message: Message):
             repo.__del__()
             return
         await status.edit(
-            "`[HEROKU]: Zaid-Userbot Deploy Update is in Progress...`"
+            "`[HEROKU]: Arab-Userbot Deploy Update is in Progress...`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -319,7 +319,7 @@ async def updatees(client: Client, message: Message):
 add_command_help(
     "update",
     [
-        ["update", "To see a list of the latest updates from Zaid-Userbot."],
+        ["update", "To see a list of the latest updates from Arab-Userbot."],
         ["update deploy", "To update userbot."],
     ],
 )
