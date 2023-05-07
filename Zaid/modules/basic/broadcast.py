@@ -25,9 +25,9 @@ def get_arg(message: Message):
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Lagi Nge-Gikes ya JAMET...`")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**Kasih Pesan Atau Reply JAMET**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -49,7 +49,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await tex.edit_text(
-        f"**Successfully Sent Message To** `{done}` **Groups, chat, Failed to Send Message To** `{error}` **Groups**"
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **Groups, chat, Gagal Mengirim Pesan Ke** `{error}` **Groups**"
     )
 
 
@@ -58,9 +58,9 @@ async def gcast_cmd(client: Client, message: Message):
 )
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Lagi Nge-Gikes ya JAMET...`")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**Kasih Pesan Atau Reply JAMET**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -82,7 +82,7 @@ async def gucast(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await text.edit_text(
-        f"**Successfully Sent Message To** `{done}` **chat, Failed to Send Message To** `{error}` **chat**"
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat, Gagal Mengirim Pesan Ke** `{error}` **chat**"
     )
 
 
@@ -91,11 +91,11 @@ add_command_help(
     [
         [
             "gcast [text/reply]",
-            "Sending Global Broadcast messages to all groups you are logged into. (Can Send Media/Sticker)",
+            "Buat Ngirim Pesan Secara Global Broadcast ke Group. (Bisa Ngirim Media/Sticker)",
         ],
         [
             "gucast [text/reply]",
-            "Sending Global Broadcast messages to all incoming Private Massages / PCs. (Can Send Media/Sticker)",
+            "Buat Ngirim Pesan Secara Global Broadcast ke Group Pesan Private  / PCs. (Bisa Ngirim Media/Sticker)",
         ],
     ],
 )
