@@ -138,6 +138,6 @@ add_command_help(
     "afk",
     [
         [".afk", "Activates AFK mode with reason as anything after .afk\nUsage: ```.afk <reason>```"],
-        ["!afk", "Deactivates AFK mode."],
+        [".afkoff", "Deactivates AFK mode."],
     ],
 )
