@@ -49,7 +49,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await tex.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Groups, chat, Gagal Mengirim Pesan Ke** `{error}` **Groups**"
+        f"**✅ ʙᴇʀʜᴀsɪʟ ᴍᴇɴɢɪʀɪᴍ ɢᴄᴀsᴛ ᴋᴇ** `{done}` **ɢʀᴏᴜᴘs ᴄʜᴀᴛ\n❌ ɢᴀɢᴀʟ ᴍᴇɴɢɪʀɪᴍ ɢᴄᴀsᴛ ᴋᴇ** `{error}` **ɢʀᴏᴜᴘs ᴄʜᴀᴛ**"
     )
 
 
@@ -82,7 +82,7 @@ async def gucast(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await text.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat, Gagal Mengirim Pesan Ke** `{error}` **chat**"
+        f"**✅ ʙᴇʀʜᴀsɪʟ ᴍᴇɴɢɪʀɪᴍ ᴋᴇ** `{done}` **ᴄʜᴀᴛ\n❌ ɢᴀɢᴀʟ ᴍᴇɴɢɪʀɪᴍ ɢᴄᴀsᴛ ᴋᴇ* `{error}` **ᴄʜᴀᴛ**"
     )
 
 
