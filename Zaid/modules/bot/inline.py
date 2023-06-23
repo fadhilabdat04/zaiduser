@@ -50,13 +50,13 @@ async def get_readable_time(seconds: int) -> str:
 async def alive_function(message: Message, answers):
     uptime = await get_readable_time((time.time() - StartTime))
     msg = f"""
-<b> — Hey, I am alive.</b>
+<b> — Hey, I am Arab Premium Userbot and I am Alive.</b>
 
-<b> • User :</b> {message.from_user.mention}
-<b> • Plugins :</b> <code>{len(CMD_HELP)} Modules</code>
-<b> • Python Version :</b> <code>{pyver.split()[0]}</code>
-<b> • Pyrogram Version :</b> <code>{pyrover}</code>
-<b> • Bot Uptime :</b> <code>{uptime}</code>
+<b> ✅ User :</b> {message.from_user.mention}
+<b> ✅ Plugins :</b> <code>{len(CMD_HELP)} Modules</code>
+<b> ✅ Python Version :</b> <code>{pyver.split()[0]}</code>
+<b> ✅ Pyrogram Version :</b> <code>{pyrover}</code>
+<b> ✅ Bot Uptime :</b> <code>{uptime}</code>
 
 <b> — Bot version: 2.0</b>
 """
@@ -64,7 +64,7 @@ async def alive_function(message: Message, answers):
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph//file/8fffe9f061a0bd1fe1c3f.jpg",
+            thumb_url="https://telegra.ph//file/0781e2b14dbd936b96295.jpg",
             input_message_content=InputTextMessageContent(
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
@@ -82,7 +82,7 @@ async def help_function(answers):
         InlineQueryResultArticle(
             title="Help Article!",
             description="Check Command List & Help",
-            thumb_url="https://telegra.ph//file/8fffe9f061a0bd1fe1c3f.jpg",
+            thumb_url="https://telegra.ph//file/0781e2b14dbd936b96295.jpg",
             input_message_content=InputTextMessageContent(
                 Data.text_help_menu.format(len(CMD_HELP))
             ),
