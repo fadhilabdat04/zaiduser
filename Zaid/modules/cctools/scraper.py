@@ -16,7 +16,7 @@ _SCRTXT = """
 
 
 🥷 **Scrapped By ->** {}
-👨‍🎤 **Developed By ->** @TheUpdatesChannel 🐲
+👨‍🎤 **Developed By ->** @SiArab_Store 🎈
 """
 
 
@@ -29,7 +29,7 @@ async def cc_scraper(c, m):
     spl = m.text.split(" ")
     e3 = await m.reply_text("...", quote=True)
     if not spl:
-        return await e3.edit("full cmd de vai.. 😔")
+        return await e3.edit("full cmd de nge.. 😔")
     elif len(spl) == 2:
         _chat = spl[1].strip()
         limit = 100
@@ -60,7 +60,7 @@ async def cc_scraper(c, m):
         str(txt.count("\n")),
         m.from_user.mention,
     )
-    file = f"x{limit} CC Scrapped by ZaidUB.txt"
+    file = f"x{limit} CC Scrapped by ArabUB.txt"
     with open(file, "w+") as f:
         f.write(txt)
     del txt
