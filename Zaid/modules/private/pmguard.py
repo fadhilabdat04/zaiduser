@@ -32,10 +32,10 @@ def get_arg(message):
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**Set limit to what?**")
+        await message.edit("**Set Limit Berapa?**")
         return
     await Zaid.set_limit(int(arg))
-    await message.edit(f"**Limit set to {arg}**")
+    await message.edit(f"**Limit Telah Di Set {arg}**")
 
 
 
@@ -58,7 +58,7 @@ async def allow(client, message):
     chat_id = message.chat.id
     pmpermit, pm_message, limit, block_message = await Zaid.get_pm_settings()
     await Zaid.allow_user(chat_id)
-    await message.edit(f"**I have allowed [you](tg://user?id={chat_id}) to PM me.**")
+    await message.edit(f"**Lu Udah Di Izinin [you](tg://user?id={chat_id}) Buat Nge-Chat Tuan Gua.**")
     async for message in client.search_messages(
         chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
     ):
@@ -70,7 +70,7 @@ async def allow(client, message):
 async def deny(client, message):
     chat_id = message.chat.id
     await Zectdb.deny_user(chat_id)
-    await message.edit(f"**I have denied [you](tg://user?id={chat_id}) to PM me.**")
+    await message.edit(f"**Tuan Gua Nolak Lu [you](tg://user?id={chat_id}) Buat Nge-Chat Dia.**")
 
 
 @Client.on_message(
