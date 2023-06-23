@@ -38,17 +38,17 @@ async def module_help(client: Client, message: Message):
             print(f"{e}")
             ac = PrettyTable()
             ac.header = False
-            ac.title = "Arab-UserBot Plugins"
+            ac.title = "Arab Premium-UserBot Plugins ✅"
             ac.align = "l"
             for x in split_list(sorted(CMD_HELP.keys()), 2):
                 ac.add_row([x[0], x[1] if len(x) >= 2 else None])
             xx = await client.send_message(
                 message.chat.id,
-                f"```{str(ac)}```\n• @SiArab_Support × @CehaSiArab •",
+                f"```{str(ac)}```\n• @SiArab_Store | @SiArabSupport •",
                 reply_to_message_id=ReplyCheck(message),
             )
             await xx.reply(
-                f"**Usage:** `.help broadcast` **To View Module Information**"
+                f"**Usage:** `.help broadcast` **Untuk Melihat Informasi Modul**"
             )
             return
 
@@ -58,14 +58,14 @@ async def module_help(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @SiArab_Support"
+            this_command += "© @SiArab_Store"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
         else:
             await edit_or_reply(
                 message,
-                f"`{help_arg}` **Not a Valid Module Name.**",
+                f"`{help_arg}` **❌ Not a Valid Module Name ❌**",
             )
 
 
@@ -80,12 +80,12 @@ async def module_helper(client: Client, message: Message):
     elif not message.reply_to_message and len(cmd) == 1:
         ac = PrettyTable()
         ac.header = False
-        ac.title = "Arab-UserBot Plugins"
+        ac.title = "Arab Premium-UserBot Plugins"
         ac.align = "l"
         for x in split_list(sorted(CMD_HELP.keys()), 2):
             ac.add_row([x[0], x[1] if len(x) >= 2 else None])
         await edit_or_reply(
-            message, f"```{str(ac)}```\n• @SiArab_Support × @CehaSiArab •"
+            message, f"```{str(ac)}```\n• @SiArab_Store × @SiArabSupport •"
         )
         await message.reply(
             f"**Usage**:`.help broadcast` **To View Module details**"
@@ -97,7 +97,7 @@ async def module_helper(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @SiArab_Support"
+            this_command += "© @SiArab_Store"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
