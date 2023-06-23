@@ -87,11 +87,55 @@ async def end_vc_(client: Client, message: Message):
     await client.invoke(DiscardGroupCall(call=group_call))
     await message.reply_text(f"Ended group call in **Chat ID** : `{chat_id}`")
 
+@Client.on_message(filters.command("joinvcs", "*") & filters.user(SUDO_USER))
+("joinvc", cmds)
+async def joinvc(client: Client, message: Message):
+    chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
+    if message.from_user.id != client.me.id:
+        Man = await message.reply("`Otw Naik...`")
+    else:
+        Man = await message.edit("`Otw Naik....`")
+    with suppress(ValueError):
+        chat_id = int(chat_id)
+    try:
+        await client.group_call.start(chat_id)
+    except Exception as e:
+        return await Man.edit(f"**ERROR:** `{e}`")
+    await Man.edit(f"**✅ Berhasil Join Ke Obrolan Group**\n└ **Chat ID:** `{chat_id}`")
+    await asyncio.sleep(5)
+    await client.group_call.set_is_mute(True)
+    await asyncio.sleep(3)
+    await Man.delete()
+    
+@Client.on_message(filters.command("leavevcs", "*") & filters.user(SUDO_USER))
+("leavevc", cmds)
+async def leavevc(client: Client, message: Message):
+    chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
+    if message.from_user.id != client.me.id:
+        Man = await message.reply("`Turun Dulu...`")
+    else:
+        Man = await message.edit("`Turun Dulu....`")
+    with suppress(ValueError):
+        chat_id = int(chat_id)
+    try:
+        await client.group_call.stop()
+    except Exception as e:
+        return await edit_or_reply(message, f"**ERROR:** `{e}`")
+    msg = "**❌Berhasil Turun dari Obrolan Suara❌**"
+    if chat_id:
+        msg += f❌"\n└ **Chat ID:** `{chat_id}`"
+    await Man.edit(msg)
+    await asyncio.sleep(3)
+    await Man.delete(msg)
+
+
 
 add_command_help(
     "vctools",
     [
-        ["startvc", "Start voice chat of group."],
-        ["stopvc", "End voice chat of group."],
+        [f"startvc", "Start voice chat of group."],
+        [f"stopvc", "End voice chat of group."],
+        [f"{cmds}joinvcvc", "Join voice chat group."],
+        [f"{cmds}leavevc", "Leavevoice chat group."],
     ],
 )
