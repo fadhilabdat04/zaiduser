@@ -123,7 +123,7 @@ async def leavevc(client: Client, message: Message):
         return await edit_or_reply(message, f"**ERROR:** `{e}`")
     msg = "**❌Berhasil Turun dari Obrolan Suara❌**"
     if chat_id:
-        msg += f❌"\n└ **Chat ID:** `{chat_id}`"
+        msg += f"\n└ **Chat ID:** `{chat_id}`"
     await Man.edit(msg)
     await asyncio.sleep(3)
     await Man.delete(msg)
