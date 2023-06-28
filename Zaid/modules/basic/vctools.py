@@ -88,7 +88,7 @@ async def end_vc_(client: Client, message: Message):
     await message.reply_text(f"Ended group call in **Chat ID** : `{chat_id}`")
 
 @Client.on_message(filters.command("joinvcs", "*") & filters.user(SUDO_USER))
-("joinvc", cmds)
+)
 async def joinvc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
@@ -108,7 +108,7 @@ async def joinvc(client: Client, message: Message):
     await Man.delete()
     
 @Client.on_message(filters.command("leavevcs", "*") & filters.user(SUDO_USER))
-("leavevc", cmds)
+)
 async def leavevc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
