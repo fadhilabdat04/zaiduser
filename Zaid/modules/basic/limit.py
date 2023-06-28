@@ -7,7 +7,7 @@ from Zaid.helper.basic import edit_or_reply
 from Zaid.modules.help import add_command_help
 
 
-@geez("limit")
+@Client.on_message(filters.command(["limit"], ".") & filters.me)
 async def spamban(client: Client, m: Message):
     await client.unblock_user("SpamBot")
     response = await client.send(
