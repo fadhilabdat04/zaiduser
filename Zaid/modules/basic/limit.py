@@ -2,7 +2,7 @@ import asyncio
 from pyrogram import Client, raw
 from pyrogram.types import Message
 
-from Zaid.helper.utility import edit_or_reply
+from Zaid.helper.basic import edit_or_reply
 
 from Zaid.modules.help import add_command_help
 
