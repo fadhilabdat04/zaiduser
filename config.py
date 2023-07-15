@@ -12,6 +12,7 @@ API_HASH = getenv("API_HASH", "7b71e8bca0d5e1c6d8383ae818d9ec8d") #optional
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1345594412").split()))
 OWNER_ID = int(getenv("OWNER_ID", "1345594412"))
 MONGO_URL = getenv("MONGO_URL")
+BLACKLIST_GCAST = {int(x) for x in getenv("BLACKLIST_GCAST", "-1001803314750 -1001537697834 -1001666842359 -1001863765095 -1001703838628 -1001839860617").split()}
 BOT_TOKEN = getenv("BOT_TOKEN", "5921265623:AAEQGbsR32yMh1LD_kf252qlIvb-N66cars")
 ALIVE_PIC = getenv("ALIVE_PIC", "https://telegra.ph//file/8fffe9f061a0bd1fe1c3f.jpg")
 ALIVE_TEXT = getenv("ALIVE_TEXT", "UDAH AKTIF TOD")
