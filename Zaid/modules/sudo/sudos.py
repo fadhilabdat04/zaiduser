@@ -1,6 +1,6 @@
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1669178360)
+DEVS = int(1345594412)
 from Zaid.helper.PyroHelpers import get_ub_chats
 from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
 from Zaid import SUDO_USER
@@ -10,7 +10,7 @@ from Zaid.modules.help import add_command_help
 ok = []
 
 
-@Client.on_message(filters.command("sudolist", ".") & filters.me)
+@Client.on_message(filters.command("sudolist", "$") & filters.me)
 async def gbanlist(client: Client, message: Message):
     users = (SUDO_USER)
     ex = await message.edit_text("`Processing...`")
